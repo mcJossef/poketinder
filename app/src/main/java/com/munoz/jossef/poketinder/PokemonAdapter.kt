@@ -20,7 +20,6 @@ class PokemonAdapter (
                     .with(itemView)
                     .load(pokemon.getPokemonImage())
                     .into(binding.ivPokemon)
-
             }
 
         }
