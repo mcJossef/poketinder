@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.OkHttpClient
 
 class MainActivity : AppCompatActivity() {
     private var listPokemon: List<PokemonResponse> = emptyList()
@@ -26,11 +27,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getRetrofit(): Retrofit {
+        val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
+            val newRequest = chain.request().newBuilder()
+                .addHeader("Content-Type", "application/json")
+                .addHeader("NAME-HEADER", "VALUE-HEADER")
+                .build()
+            chain.proceed(newRequest)
+        }
+
+        val client = httpClient.build()
+
         return Retrofit.Builder()
             .baseUrl("https://pokeapi.co")
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
     }
+
 
 
     private fun getAllPokemons() {
@@ -47,4 +60,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
