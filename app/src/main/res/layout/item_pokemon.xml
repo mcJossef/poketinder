@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textColor="#CCFBFBFB"
-                android:text="Pokemon de tipo Agua" />
+                android:text="Pokemon de tipo agua" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
