@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">poketinder</string>
+    <string name="user_email">Correo Electronico</string>
+    <string name="user_password">Password</string>
+    <string name="start_session">Iniciar sesion</string>
+    <string name="register_me">Registrarme</string>
+    <string name="Ya_tengo_una_cuenta">Ya tengo una cuenta</string>
+    <string name="Registrar">Registrar</string>
+    <string name="Repetir_contraseña">Repetir contraseña</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="Correo_electrónico">Correo electrónico</string>
 </resources>
