@@ -70,6 +70,7 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Ya existe un usuario registrado con ese correo electrónico.", Toast.LENGTH_LONG).show()
             }
+            startActivity(Intent(this, LoginActivity::class.java))
         }
         binding.btnRegresar.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))

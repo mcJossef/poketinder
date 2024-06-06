@@ -1,10 +1,7 @@
 package com.munoz.jossef.poketinder
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Toast
 import com.munoz.jossef.poketinder.databinding.ActivityLoginBinding
@@ -41,11 +38,18 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.edtEmail.text.toString()
             val password = binding.edtPassword.text.toString()
 
-            if (validateCredentials(email, password)) {
-                loginViewModel.validateInputs(email, password)
-                Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(this, "No estás registrado, regístrate.", Toast.LENGTH_LONG).show()
+            val validationStatus = validateCredentials(email, password)
+            when (validationStatus) {
+                0 -> {
+                    Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show()
+                    loginViewModel.validateInputs(email, password)
+                }
+                1 -> {
+                    Toast.makeText(this, "Tu contraseña está incorrecta.", Toast.LENGTH_LONG).show()
+                }
+                else -> {
+                    Toast.makeText(this, "tu correo o contraseña es incorrecto , si no es asi registrate.", Toast.LENGTH_LONG).show()
+                }
             }
             //startActivity(Intent(this, RegisterActivity::class.java))
         }
@@ -54,17 +58,22 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
     }
-    private fun validateCredentials(email: String, password: String): Boolean {
+
+    private fun validateCredentials(email: String, password: String): Int {
         val sharedPreferences = getSharedPreferences("MY_SETTINGS_REGISTER", MODE_PRIVATE)
         val usersJson = sharedPreferences.getString("users", "[]")
         val usersArray = JSONArray(usersJson)
 
+        var emailFound = false
         for (i in 0 until usersArray.length()) {
             val user = usersArray.getJSONObject(i)
-            if (user.getString("email") == email && user.getString("password") == password) {
-                return true
+            if (user.getString("email") == email) {
+                emailFound = true
+                if (user.getString("password") == password) {
+                    return 0
+                }
             }
         }
-        return false
+        return if (emailFound) 1 else 2
     }
 }
