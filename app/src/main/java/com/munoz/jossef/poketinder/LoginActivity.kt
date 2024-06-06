@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
                 0 -> {
                     Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG).show()
                     loginViewModel.validateInputs(email, password)
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
                 1 -> {
                     Toast.makeText(this, "Tu contraseña está incorrecta.", Toast.LENGTH_LONG).show()
@@ -51,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "tu correo o contraseña es incorrecto , si no es asi registrate.", Toast.LENGTH_LONG).show()
                 }
             }
-            //startActivity(Intent(this, RegisterActivity::class.java))
         }
 
         binding.btnRegister.setOnClickListener {
