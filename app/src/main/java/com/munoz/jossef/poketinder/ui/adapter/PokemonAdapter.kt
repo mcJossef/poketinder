@@ -1,4 +1,4 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.munoz.jossef.poketinder.databinding.ItemPokemonBinding
+import com.munoz.jossef.poketinder.model.PokemonResponse
 
 class PokemonAdapter (
     var list : List<PokemonResponse>
@@ -29,7 +30,7 @@ class PokemonAdapter (
         return ViewHolder(view.root)
     }
 
-    override fun onBindViewHolder(holder:ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemPokemon = list[position]
         holder.bind(itemPokemon)
     }

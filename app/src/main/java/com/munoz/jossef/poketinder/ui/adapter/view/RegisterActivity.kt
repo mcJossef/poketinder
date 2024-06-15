@@ -1,13 +1,10 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.ui.adapter.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.munoz.jossef.poketinder.databinding.ActivityLoginBinding
+import com.munoz.jossef.poketinder.ui.adapter.viewmodel.RegisterViewModel
 import com.munoz.jossef.poketinder.databinding.ActivityRegisterBinding
 import org.json.JSONArray
 import org.json.JSONObject

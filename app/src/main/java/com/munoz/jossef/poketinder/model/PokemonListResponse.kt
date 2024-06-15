@@ -1,4 +1,4 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.model
 
 data class PokemonListResponse(
     val count: Int,

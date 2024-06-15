@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.munoz.jossef.poketinder.ui.adapter.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.munoz.jossef.poketinder.ui.adapter.view.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/favoritoFragment"
+        android:name="com.munoz.jossef.poketinder.ui.adapter.view.FavoritoFragment"
+        android:label="fragment_favorito"
+        tools:layout="@layout/fragment_favorito" />
+</navigation>

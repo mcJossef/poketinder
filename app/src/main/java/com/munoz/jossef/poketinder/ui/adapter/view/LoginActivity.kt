@@ -1,9 +1,10 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.ui.adapter.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.widget.Toast
+import com.munoz.jossef.poketinder.ui.adapter.viewmodel.LoginViewModel
 import com.munoz.jossef.poketinder.databinding.ActivityLoginBinding
 import org.json.JSONArray
 

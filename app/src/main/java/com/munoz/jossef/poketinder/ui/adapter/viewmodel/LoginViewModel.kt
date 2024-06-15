@@ -1,10 +1,10 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.ui.adapter.viewmodel
 
 import android.content.Context
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Patterns
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.munoz.jossef.poketinder.database.SharedPreferencesRepository
 
 class LoginViewModel (
     val context: Context

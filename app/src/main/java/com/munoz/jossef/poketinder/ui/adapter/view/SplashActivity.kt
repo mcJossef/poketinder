@@ -1,4 +1,4 @@
-package com.munoz.jossef.poketinder
+package com.munoz.jossef.poketinder.ui.adapter.view
 
 import android.content.Intent
 import android.os.Bundle
